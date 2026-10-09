@@ -1,0 +1,8 @@
+services:
+  aac:
+    build: .
+    restart: always          # comes back after crashes AND reboots
+    ports: ["80:3000"]       # visitors just open http://your-server
+    volumes: ["aac-data:/data"]   # votes survive restarts/updates
+volumes:
+  aac-data:
